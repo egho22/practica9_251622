@@ -1,0 +1,62 @@
+/* ============================
+   IMPORTACIÓN DE FUENTES
+   ============================ */
+
+/* Importa la fuente Quicksand desde Google Fonts 
+   Disponible en pesos de 300 a 700 */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+/* Importa la fuente Alan Sans 
+   Disponible en pesos de 300 a 900 */
+@import url('https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap');
+
+
+/* ============================
+   VARIABLES GLOBALES
+   ============================ */
+
+/* :root representa el elemento <html>.
+   Aquí definimos variables CSS globales
+   que pueden reutilizarse en todo el proyecto. */
+
+:root{
+    --bg-color-dark: #131200;      /* Color de fondo modo oscuro */
+    --text-color-dark: #EDF2F4;    /* Color principal del texto */
+    --links-color-dark: #EFBDEB;   /* Color normal de enlaces */
+    --links-hover-dark: #8D91C7;   /* Color cuando el mouse pasa encima */
+    --nav-links: #8d3fd1;          /* Color específico para navegación */
+    --highlight: #EDF67D;          /* Color para resaltar elementos */
+}
+
+
+/* ============================
+   RESET BÁSICO DE ESTILOS
+   ============================ */
+
+/* Eliminamos márgenes y padding por defecto
+   del navegador para tener mayor control visual */
+
+body, main, h3{
+    padding: 0;
+    margin: 0;
+}
+
+
+/* ============================
+   ESTILOS PARA ENLACES
+   ============================ */
+
+/* Aplicamos color usando variable CSS
+   y quitamos el subrayado por defecto */
+
+a{
+    color: var(--links-color-dark);
+    text-decoration: none;
+}
+
+/* Recomendado: agregar estado hover
+   para mejorar la experiencia del usuario */
+
+a:hover{
+    color: var(--links-hover-dark);
+}

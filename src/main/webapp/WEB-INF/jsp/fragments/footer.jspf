@@ -1,0 +1,15 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<footer>
+    <div>
+        Síguenos en nuestras redes.
+        <div>
+            <a href="www.instagram.com" target="_blank">Instagram</a>
+            <a href="www.facebook.com" target="_blank">Facebook</a>
+            <a href="wwwtiktok.com" target="_blank">Tiktok</a>
+        </div>
+    </div>
+
+    <p>Copyright Nébula 2025.</p>
+    <a href="./tyc.jsp" target="_blank">Términos y condiciones</a>
+</footer>
