@@ -1,0 +1,25 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<nav class="main-nav">
+    <a class="logo" href="${pageContext.request.contextPath}/index.jsp">
+        <img src="${pageContext.request.contextPath}/assets/img/nebula-03.svg" alt="Nebula Music">
+    </a>
+
+    <!-- Checkbox oculto -->
+    <input type="checkbox" id="menu-toggle">
+
+    <!-- Botón hamburguesa -->
+    <label for="menu-toggle" class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <!-- Menú -->
+    <ul class="nav-links">
+        <li><a href="${pageContext.request.contextPath}/views/aplication/about.jsp">Nosotros</a></li>
+        <li><a href="${pageContext.request.contextPath}/comunidad">Comunidad</a></li>
+        <li><a href="${pageContext.request.contextPath}/views/auth/iniciar-sesion.jsp">Iniciar Sesión</a></li>
+    </ul>
+
+</nav>

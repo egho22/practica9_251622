@@ -1,0 +1,1089 @@
+
+@import url('./globals.css');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+    font-family: "Quicksand", sans-serif;
+    line-height: 1.6;
+}
+
+nav{
+    height: 13vh;
+    max-height: 100px;
+    /* padding: 10px; */
+}
+
+
+nav .logo{
+    margin-right: 50px;
+}
+
+nav .logo img{
+     height: 70px;
+     max-height: 100%;
+}
+
+nav a{
+    font-family: "Alan Sans", sans-serif;
+    color:  var(--nav-links);
+    text-decoration: none;
+    font-weight: 600;
+    /* transition: color 0.3s ease; */
+}
+
+nav a:hover{
+    color: var(--highlight);
+}
+
+
+nav ul{
+    display: inline;
+}
+
+/* Elementos de la lista */
+nav li{
+    list-style-type: none;
+    display: inline;
+    margin-left: 20px;
+}
+
+
+header{
+    position: relative;
+}
+
+header img{
+    z-index: 1;
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+    object-position: top;
+}
+.principal img{
+    /* height: 85vh; */
+    object-position: center;
+}
+
+header h1{
+    margin: 0;
+    z-index: 2;
+    position: absolute;
+    top: 30%;
+    left: 50px;
+    font-family: "Alan Sans", sans-serif;
+    width: 60%;
+    font-size: 4rem;
+}
+
+header span{
+    font-style: italic;
+    font-weight: 500;
+    color: var(--highlight);
+}
+
+#news{
+    margin-top: 30px;
+    padding: 20px;
+    /* display: inline; */
+}
+
+
+article{
+    width: 30%;
+    min-width: 270px;
+    padding: 10px;
+}
+
+
+article img{
+    margin: auto;
+    width: 80%;
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    object-position: top;
+}
+
+article h3{
+    color: var(--highlight);
+    font-family: "Alan Sans", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    margin: 15px 0px;
+}
+
+article p{
+    width: 90%;
+    display:block;
+    margin: auto;
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+.plans{
+    width: 80%;
+    display: block;
+    margin:auto;
+}
+
+.plan{
+    width: 30%;
+}
+
+.price{
+    font-size: 3.5em;
+    font-weight: 800;
+    color: var(--highlight);
+}
+
+.frecuency{
+    margin-left: 10px;
+    font-size: 0.75em;
+    font-style: italic;
+}
+
+footer{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+
+.auth-container{
+    width: 100%;
+    padding: 30px 0px;
+}
+
+.auth-card{
+    background-color: #1c1a05;
+    width: 90%;
+    padding: 40px 25px;
+    border-radius: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.4);
+}
+
+.form-logo{
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px auto;
+    display: block;
+}
+
+.form-header h3{
+    font-family: "Alan Sans", sans-serif;
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.form-subtitle{
+    font-size: 1rem;
+    color: var(--links-hover-dark);
+}
+
+.form-group{
+    margin-top: 20px;
+}
+
+.form-group label{
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="tel"],
+input[type="date"]{
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    background-color: #2a280a;
+    color: var(--text-color-dark);
+    font-family: "Quicksand", sans-serif;
+    box-sizing: border-box;
+}
+
+input:focus{
+    outline: none;
+    border: 1px solid var(--highlight);
+}
+
+input:required{
+    border-left: 4px solid var(--nav-links);
+}
+
+button{
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary{
+    background-color: var(--nav-links);
+    color: #FFFFFF;
+}
+
+.btn-primary:hover{
+    background-color: var(--highlight);
+    color: #000000;
+}
+
+.btn-secondary{
+    background-color: transparent;
+    border: 1px solid var(--links-hover-dark);
+    color: var(--links-hover-dark);
+}
+
+.btn-secondary:hover{
+    background-color: var(--links-hover-dark);
+    color: #000000;
+}
+
+/* Contenedor de los radios */
+.radio-group{
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;           /* espacio entre opciones */
+    flex-wrap: wrap;     /* evita que se rompa en móvil */
+    align-items: center;
+}
+
+/* Radio moderno */
+.radio-group input[type="radio"]{
+    accent-color: var(--highlight); /* color principal */
+    cursor: pointer;
+    transform: scale(1.1); /* ligeramente más grande */
+}
+
+/* Labels de radio */
+.radio-group label{
+    margin-right: 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+/* Hover visual */
+.radio-group label:hover{
+    color: var(--highlight);
+}
+/* =========================
+   SELECT (Cuenta)
+   ========================= */
+
+select{
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    background-color: #2a280a;
+    color: var(--text-color-dark);
+    font-family: "Quicksand", sans-serif;
+    box-sizing: border-box;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Focus consistente con tus inputs */
+select:focus{
+    outline: none;
+    border: 1px solid var(--highlight);
+    box-shadow: 0 0 6px rgba(255, 215, 0, 0.4);
+}
+
+/* apartir de 768px vas a aplicar estos estilos */
+@media (min-width: 768px){
+    .auth-container{
+        padding-top: 80px;
+    }
+
+    .auth-card{
+        max-width: 600px;
+    }
+
+}
+
+/* ===============================
+   NAVBAR MODERNA
+=================================*/
+
+/*---------Menu--------*/
+
+/* Ocultamos el input (normalmente es un checkbox).
+   Se usa para controlar el estado del menú sin JavaScript (checkbox hack). */
+#menu-toggle{
+    display: none; /* El elemento no ocupa espacio en el layout */
+}
+
+.menu-icon{
+    display: none; /* Se mostrará solo en responsive (mobile) */
+
+    /* Activaría Flexbox cuando se muestre */
+    flex-direction: column; 
+    /* Apila los spans verticalmente (eje principal en columna) */
+
+    gap: 5px; 
+    /* Espacio moderno entre hijos flex (mejor que usar margin individual) */
+
+    cursor: pointer; 
+    /* Cambia el cursor para indicar que es interactivo */
+}
+
+.menu-icon span{
+    width: 25px;
+    height: 3px;
+    background: white;
+
+    transition: 0.3s ease;
+    /* Suaviza cualquier cambio (ej. rotaciones o animaciones futuras) */
+}
+
+/*---------Menu --------*/
+
+.main-nav{
+    display: flex;
+    /* Activa Flexbox para distribuir logo y menú */
+
+    justify-content: space-between;
+    /* Distribuye los hijos horizontalmente:
+       uno a la izquierda y otro a la derecha */
+
+    align-items: center;
+    /* Centra verticalmente los elementos dentro del navbar */
+
+    padding: 0 5%;
+
+    background: rgba(15, 15, 30, 0.95);
+
+    backdrop-filter: blur(10px);
+    /* Aplica desenfoque al fondo detrás del navbar
+       (efecto glassmorphism moderno) */
+
+    position: sticky;
+    /* Se comporta como relative hasta que llega al top,
+       luego se "pega" como fixed */
+
+    top: 0;
+    /* Punto donde empieza a quedarse fijo */
+
+    z-index: 1000;
+    /* Controla la superposición en el eje Z.
+       Asegura que el navbar quede encima del contenido */
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+.main-nav ul{
+    display: flex;
+    /* Convierte la lista en contenedor flex
+       para alinear los links en fila */
+
+    list-style: none;
+    /* Elimina los estilos por defecto (viñetas) */
+}
+
+.main-nav a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+
+    position: relative;
+    /* Necesario para que el ::after absoluto
+       se posicione respecto al enlace */
+
+    transition: 0.3s ease;
+    /* Suaviza el cambio de color en hover */
+}
+
+.main-nav a::after{
+    content: "";
+    /* Crea un pseudoelemento decorativo */
+
+    position: absolute;
+    /* Se posiciona respecto al <a> (que es relative) */
+
+    left: 0;
+    bottom: -5px;
+    /* Ubica la línea debajo del texto */
+
+    width: 0%;
+    /* Empieza invisible (sin ancho) */
+
+    height: 2px;
+
+    background: linear-gradient(90deg, var(--nav-links), var(--highlight));
+    /* Gradiente horizontal usando variables CSS */
+
+    transition: 0.3s;
+    /* Animación suave cuando cambie el width */
+}
+
+.main-nav a:hover{
+    color: var(--nav-links);
+    /* Cambio visual en interacción */
+}
+/* 
+a:hover::after significa: cuando pasas el mouse sobre el enlace (:hover es una pseudoclase de estado),
+se modifica su elemento virtual ::after (un pseudoelemento que no existe en el HTML y se usa para decorar).
+*/
+
+.main-nav a:hover::after{
+    width: 100%;
+    /* Expande la línea decorativa completamente
+       creando efecto de animación */
+}
+
+.logo img{
+    height: 40px;
+    /* Controla el tamaño del logo dentro del flex container */
+}
+
+/* ===============================
+   HERO FULL HEIGHT MENOS NAV
+=================================*/
+
+.hero{
+    position: relative;
+    /* Permite que los elementos absolutos internos
+       (como la imagen) se posicionen respecto a este contenedor */
+
+    height: 87vh;
+    /* vh = viewport height.
+       87% del alto visible del navegador */
+
+    max-height: calc(100vh - 100px);
+    /* calc() permite hacer operaciones matemáticas en CSS.
+       Aquí: alto total de pantalla menos 100px (ej. altura del navbar).
+       Evita que el hero sobrepase el espacio disponible */
+
+    overflow: hidden;
+    /* Oculta cualquier contenido que sobresalga.
+       Importante cuando usamos imágenes absolutas */
+
+    display: flex;
+    /* Activamos Flexbox para centrar el contenido */
+
+    align-items: center;
+    /* Centra verticalmente el contenido */
+
+    justify-content: center;
+    /* Centra horizontalmente el contenido */
+
+    text-align: center;
+    /* Centra el texto dentro del h1 */
+
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.hero img{
+    position: absolute;
+    /* Sale del flujo normal del documento */
+
+    inset: 0;
+    /* Atajo moderno para:
+       top: 0; right: 0; bottom: 0; left: 0;
+       Hace que la imagen cubra todo el contenedor */
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    /* La imagen llena el contenedor
+       manteniendo proporciones (como background-size: cover) */
+
+    filter: brightness(0.45);
+    /* Oscurece la imagen para mejorar contraste del texto */
+
+    z-index: 1;
+    /* Se coloca detrás del texto */
+}
+
+.hero h1{
+    position: initial;
+    /* Restaura el valor por defecto (static).
+       Aquí realmente no es necesario, pero explícitamente
+       indica que no está posicionado */
+
+    z-index: 2;
+    /* Se coloca por encima de la imagen */
+
+    font-size: clamp(2rem, 5vw, 4rem);
+    /* clamp(min, ideal, max)
+       Tamaño de fuente responsivo:
+       - Mínimo 2rem
+       - Ideal 5vw (escala con el ancho de pantalla)
+       - Máximo 4rem
+       Muy moderno y recomendado en lugar de múltiples media queries */
+
+    max-width: 900px;
+    /* Limita el ancho del texto para mejor legibilidad */
+
+    padding: 0 20px;
+}
+
+
+/* ===============================
+   NEWS FLEX CARDS
+=================================*/
+
+.news-box{
+    padding: 80px 5%;
+
+    display: flex;
+    /* Convierte el contenedor en Flexbox
+       para organizar las cards en fila */
+
+    flex-wrap: wrap;
+    /* Permite que las cards bajen a la siguiente línea
+       cuando no hay suficiente espacio horizontal */
+
+    gap: 30px;
+    /* Espacio uniforme entre las cards
+       (más limpio que usar margin en cada una) */
+
+    justify-content: center;
+    /* Centra todas las cards cuando sobra espacio */
+}
+
+/* Cada card */
+.card{
+    background: #1a1a2e;
+    border-radius: 15px;
+    overflow: hidden;
+    /* Recorta cualquier contenido que sobresalga
+       (ej. imagen dentro de bordes redondeados) */
+
+    transition: 0.4s ease;
+    /* Suaviza transformaciones y cambios de sombra */
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+    display: flex;
+    /* Hace que el contenido interno sea flexible */
+
+    flex-direction: column;
+    /* Organiza imagen, título y texto en columna */
+
+    flex: 1 1 300px;
+    /* shorthand de:
+       flex-grow: 1;   (puede crecer)
+       flex-shrink: 1; (puede encogerse)
+       flex-basis: 300px; (tamaño base inicial)
+       → Esto hace las cards responsivas automáticamente */
+
+    max-width: 350px;
+    /* Limita cuánto pueden crecer
+       para que no se deformen en pantallas grandes */
+}
+
+.card:hover{
+    transform: translateY(-8px);
+    /* Mueve la card hacia arriba (efecto flotante) */
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    /* Refuerza la sensación de elevación */
+}
+
+.card img{
+    width: 100%;
+    height: 200px;
+
+    object-fit: cover;
+    /* La imagen llena el espacio sin deformarse
+       recortando si es necesario */
+}
+
+.card h3{
+    padding: 20px 20px 10px 20px;
+    color: var(--nav-links);
+}
+
+.card p{
+    padding: 0 20px 20px 20px;
+    color: #ccc;
+    font-size: 0.95rem;
+}
+
+/* ===============================
+   MEDIA QUERY (Responsive)
+=================================*/
+
+@media (max-width: 768px){
+    /* Se activa cuando la pantalla es menor o igual a 768px
+       (tablet y móvil) */
+
+    .main-nav{
+        /* flex-direction: column; */
+        /* Podría cambiar el eje si quisieras navbar vertical */
+
+        padding: 15px;
+    }
+
+    .hero{
+        height: 30vh;
+        /* Reduce altura del hero en móvil */
+    }
+
+    /* Mostrar hamburguesa */
+    .menu-icon{
+        display: flex;
+        /* Activa Flexbox para que aparezcan
+           las líneas del icono en columna */
+    }
+
+    /* Ocultar menú inicialmente */
+    .nav-links{
+        position: absolute;
+        /* Sale del flujo normal
+           para superponerse al contenido */
+
+        top: 80px;
+        right: 0;
+        width: 100%;
+
+        flex-direction: column;
+        /* Cambia de fila horizontal a columna vertical */
+
+        align-items: center;
+        /* Centra los links horizontalmente */
+
+        gap: 60px;
+        /* Espaciado amplio entre opciones */
+
+        padding: 30px 0;
+
+        background: rgba(15,15,30,0.98);
+
+        transform: translateY(-150%);
+        /* Lo mueve hacia arriba fuera de la pantalla */
+
+        transition: 0.4s ease;
+        /* Permite animación suave al aparecer */
+    }
+
+    /* Cuando el checkbox está activo */
+    #menu-toggle:checked ~ .nav-links{
+        transform: translateY(0);
+        /* Regresa el menú a su posición visible
+           usando selector de hermano general (~)
+           → Técnica sin JavaScript */
+    }
+}
+
+/* ===============================
+   COMUNIDAD
+=================================*/
+
+/* CONTENEDOR GRID */
+.users-grid{
+    display: grid;
+    /* Activa CSS Grid (modelo bidimensional: filas + columnas) */
+
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Layout responsivo automático:
+       - auto-fit → crea tantas columnas como quepan
+       - minmax(280px, 1fr) →
+           mínimo 280px
+           máximo 1fr (fracción del espacio disponible)
+       Resultado: las tarjetas se acomodan solas sin media queries */
+
+    gap: 25px;
+    /* Espacio uniforme entre filas y columnas */
+}
+
+/* TARJETA */
+.user-card{
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 15px;
+
+    display: grid;
+    /* Usamos Grid también dentro de cada tarjeta */
+
+    grid-template-columns: 80px 1fr;
+    /* Dos columnas:
+       - 80px para avatar
+       - 1fr para la información (ocupa el resto del espacio) */
+
+    gap: 15px;
+    /* Espacio entre avatar e info */
+
+    align-items: center;
+    /* Centra verticalmente los elementos dentro de la celda */
+
+    transition: 0.3s ease;
+    /* Animación suave para hover */
+
+    border: 1px solid #2a2a2a;
+    margin: 10px;
+}
+
+.user-card:hover{
+    transform: translateY(-5px);
+    /* Efecto de elevación */
+
+    border-color: #8d3fd1;
+    /* Cambio visual en interacción */
+}
+
+/* AVATAR */
+.user-avatar img{
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+    /* Hace la imagen circular */
+
+    object-fit: cover;
+    /* Evita que la imagen se deforme
+       manteniendo proporciones */
+}
+
+/* INFO */
+.user-info h4{
+    margin: 0;
+    color: white;
+}
+
+.email{
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+/* DATA EXTRA */
+.user-data{
+    grid-column: 1 / -1;
+    /* Hace que este bloque ocupe
+       desde la primera hasta la última columna
+       (atraviesa todo el grid interno) */
+
+    display: flex;
+    /* Flexbox interno para organizar datos verticalmente */
+
+    flex-direction: column;
+    /* Los datos se apilan uno debajo del otro */
+
+    gap: 6px;
+    /* Espacio entre líneas */
+
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* BADGES */
+.badge{
+    display: inline-block;
+    /* Permite aplicar padding y width,
+       pero sin ocupar toda la línea */
+
+    width: fit-content;
+    /* El ancho se adapta exactamente al contenido */
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+    /* Forma tipo píldora */
+
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.premium{
+    background: linear-gradient(90deg, #8d3fd1, #5a1fa0);
+    /* Gradiente horizontal */
+
+    color: white;
+}
+
+.basic{
+    background: #333;
+    color: #bbb;
+}
+
+/* PLAY-MUSIC */
+
+/* Contenedor Principal con Gradiente tipo Spotify */
+.playlist-container {
+    background: linear-gradient(to bottom, #8d3fd1 0%, var(--bg-color-dark) 40%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Header de la Playlist */
+.playlist-header {
+    display: flex;
+    align-items: flex-end;
+    gap: 25px;
+    padding: 40px 20px;
+}
+
+.playlist-cover img {
+    width: 230px;
+    height: 230px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    border-radius: 4px;
+}
+
+.playlist-type {
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.playlist-header h1 {
+    font-size: clamp(2rem, 6vw, 5rem);
+    margin: 10px 0;
+    font-family: "Alan Sans", sans-serif;
+    position: static; /* Reset del estilo hero previo */
+    width: 100%;
+}
+
+.playlist-description span {
+    color: white;
+    font-weight: bold;
+}
+
+/* Controles */
+.playlist-controls {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 20px;
+}
+
+.play-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--highlight);
+    color: black;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.heart-btn, .more-btn {
+    background: none;
+    color: #b3b3b3;
+    font-size: 1.8rem;
+    border: none;
+    width: auto;
+}
+
+/* Tabla de Canciones */
+.playlist-table-container {
+    padding: 0 20px;
+}
+
+.song-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #b3b3b3;
+    font-size: 0.9rem;
+}
+
+.song-table thead th {
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 10px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.song-row:hover {
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 4px;
+}
+
+.song-row td {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+.song-row.active .song-title, 
+.song-row.active .index {
+    color: var(--highlight);
+}
+
+.title-cell {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.title-cell img {
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+}
+
+.song-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.song-title {
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.song-artist {
+    font-size: 0.85rem;
+}
+
+/* ===============================
+   ABOUT HEADER
+=================================*/
+
+.about-header{
+    position: relative;
+    height: 40vh;
+    overflow: hidden;
+}
+
+.about-header img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+
+.about-header h1{
+    position: absolute;
+    bottom: 40px;
+    left: 5%;
+    font-family: "Alan Sans", sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+/* ===============================
+   SECCIONES GENERALES
+=================================*/
+
+.section-title{
+    text-align: center;
+    font-family: "Alan Sans", sans-serif;
+    margin-bottom: 50px;
+}
+
+/* ===============================
+   PRICING GRID
+=================================*/
+
+.pricing-section{
+    padding: 100px 5%;
+}
+
+.pricing-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.pricing-card{
+    background: #1a1a2e;
+    padding: 40px 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.05);
+    display: grid;
+    gap: 15px;
+    transition: 0.4s ease;
+}
+
+.pricing-card:hover{
+    transform: translateY(-10px);
+    border-color: var(--highlight);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.pricing-card h3{
+    font-family: "Alan Sans", sans-serif;
+    color: white;
+}
+
+.pricing-card ul{
+    padding-left: 20px;
+    color: #bbb;
+}
+
+.price-box{
+    margin-top: 20px;
+}
+
+.popular{
+    border: 1px solid var(--highlight);
+    transform: scale(1.05);
+}
+
+/* ===============================
+   MAP SECTION
+=================================*/
+
+.map-section{
+    padding: 80px 5%;
+}
+
+.map-wrapper{
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.map-wrapper iframe{
+    width: 100%;
+    height: 450px;
+    border: none;
+}
+
+/* ===============================
+   NEWSLETTER
+=================================*/
+
+.newsletter-section{
+    padding: 100px 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.newsletter-card{
+    background: #1a1a2e;
+    padding: 50px;
+    border-radius: 25px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.newsletter-card h2{
+    font-family: "Alan Sans", sans-serif;
+    margin-bottom: 25px;
+}
+
+.newsletter-form{
+    display: grid;
+    gap: 15px;
+}
+
