@@ -26,7 +26,7 @@
         <%@include file="/WEB-INF/jsp/fragments/header.jspf"%>
 
         <c:if test="${sessionScope.usuario != null }">
-            <h2>Bienvenido ${sessionScope.usuario}</h2>
+            <h2>Bienvenido ${sessionScope.usuario.correo}</h2>
         </c:if>
         <header class="principal hero">
             <img src="${pageContext.request.contextPath}/assets/img/cover.jpg" />

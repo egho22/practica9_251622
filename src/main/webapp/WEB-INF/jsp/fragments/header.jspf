@@ -19,7 +19,9 @@
     <ul class="nav-links">
         <li><a href="${pageContext.request.contextPath}/views/aplication/about.jsp">Nosotros</a></li>
         <li><a href="${pageContext.request.contextPath}/comunidad">Comunidad</a></li>
+        <li><a href="${pageContext.request.contextPath}/albums">Mis Álbumes</a></li>
         <li><a href="${pageContext.request.contextPath}/views/auth/iniciar-sesion.jsp">Iniciar Sesión</a></li>
+
     </ul>
 
 </nav>

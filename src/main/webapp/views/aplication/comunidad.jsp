@@ -24,7 +24,7 @@
                     <strong><c:out value="${requestScope.totalUsuarios}"></c:out></strong>
                 </p>
                 <p>Bienvenido:
-                    <strong><c:out value="${sessionScope.nombre}"></c:out></strong>
+                    <strong><c:out value="${sessionScope}"></c:out></strong>
                 </p>
                 <p>Aplicación:
                     <strong><c:out value="${applicationScope.appname}"></c:out></strong>
