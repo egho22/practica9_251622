@@ -8,15 +8,12 @@ import com.mycompany.nubulamusicwebaplication.models.Usuario;
 import com.mycompany.nubulamusicwebaplication.service.IUsuarioService;
 import com.mycompany.nubulamusicwebaplication.service.UsuarioService;
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import java.rmi.ServerError;
-import java.rmi.ServerException;
 
 /**
  *
@@ -37,10 +34,12 @@ public class AutenticacionServlet extends HttpServlet {
         Usuario usuario = usuarioservice.autenticar(correo, contrasenia);
 
         try {
+            HttpSession sesionAnterior = request.getSession(false);
+            if(sesionAnterior!=null){
+                sesionAnterior.invalidate();
+            }
             HttpSession sesion = request.getSession(true);
             sesion.setAttribute("usuario", usuario);
-            sesion.setAttribute("correo", usuario.getCorreo());
-            sesion.setAttribute("nombre", usuario.getNombre());
             //response.sendRedirect(request.getContextPath() + "/index.jsp");
             request.getRequestDispatcher("/index.jsp").forward(request, response);
         } catch (IllegalArgumentException e) {
