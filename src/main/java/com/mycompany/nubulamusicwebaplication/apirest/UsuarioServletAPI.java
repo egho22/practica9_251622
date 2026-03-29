@@ -6,6 +6,7 @@ package com.mycompany.nubulamusicwebaplication.apirest;
 
 import com.mycompany.nubulamusicwebaplication.dto.ResponseMessageDTO;
 import com.mycompany.nubulamusicwebaplication.dto.UsuarioDTO;
+import com.mycompany.nubulamusicwebaplication.dto.UsuarioRequestDTO;
 import com.mycompany.nubulamusicwebaplication.models.Usuario;
 import com.mycompany.nubulamusicwebaplication.service.IUsuarioService;
 import com.mycompany.nubulamusicwebaplication.service.UsuarioService;
@@ -97,15 +98,123 @@ public class UsuarioServletAPI extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+
+        ResponseMessageDTO apiResponse = new ResponseMessageDTO();
+        // EN EL POST NO SE MANDAN PARAMETROS SE MANDA LA INFORMACION A GUARDAR EN EL CUERPO DE LA SOLICITUD
+        try {
+            UsuarioRequestDTO req = JSONMapper.mapper
+                    .readValue(request.getInputStream(), UsuarioRequestDTO.class);
+
+            usuarioService.registrar(
+                    req.getNombre(),
+                    req.getCorreo(),
+                    req.getContrasenia(),
+                    req.getPseudonimo(),
+                    req.getEstado(),
+                    req.getCuenta(),
+                    req.getFechaNacimiento(),
+                    req.isTerminosAceptados()
+            );
+
+            response.setStatus(HttpServletResponse.SC_CREATED);
+
+            apiResponse.setSuccess(true);
+            apiResponse.setMessage("Usuario creado correctamente");
+
+            JSONMapper.mapper.writeValue(response.getWriter(), apiResponse);
+
+        } catch (Exception e) {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+
+            apiResponse.setSuccess(false);
+            apiResponse.setMessage(e.getMessage());
+
+            JSONMapper.mapper.writeValue(response.getWriter(), apiResponse);
+        }
     }
 
     @Override
     protected void doPut(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+
+        ResponseMessageDTO apiResponse = new ResponseMessageDTO();
+        // EL PUT MANDAMOS EN LOS PARAMETROS EL IDENTIFICADOR DEL ELEMENTO QUE SE VA A ACTUALIZAR
+        // Y EL CUERPO DE LA SOLICITUD EL OBJETO CON LOS CAMPOS ACTUALIZADOS
+        try {
+            //PARAMETRO
+            String pathInfo = request.getPathInfo();
+
+            if (pathInfo == null || pathInfo.equals("/")) {
+                throw new IllegalArgumentException("El id es obligatorio.");
+            }
+
+            Long id = Long.parseLong(pathInfo.substring(1));
+            // CUERPO/BODY
+            UsuarioRequestDTO req = JSONMapper.mapper
+                    .readValue(request.getInputStream(), UsuarioRequestDTO.class);
+
+            Usuario usuario = new Usuario();
+            usuario.setId(id);
+            usuario.setNombre(req.getNombre());
+            usuario.setCorreo(req.getCorreo());
+            usuario.setPseudonimo(req.getPseudonimo());
+            usuario.setEstado(req.getEstado());
+            usuario.setCuenta(req.getCuenta());
+            usuario.setFechaNacimiento(req.getFechaNacimiento());
+
+            usuarioService.actualizarUsuario(usuario);
+
+            apiResponse.setSuccess(true);
+            apiResponse.setMessage("Usuario actualizado correctamente");
+
+            JSONMapper.mapper.writeValue(response.getWriter(), apiResponse);
+
+        } catch (Exception e) {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+
+            apiResponse.setSuccess(false);
+            apiResponse.setMessage(e.getMessage());
+
+            JSONMapper.mapper.writeValue(response.getWriter(), apiResponse);
+        }
     }
 
     @Override
     protected void doDelete(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+
+        ResponseMessageDTO apiResponse = new ResponseMessageDTO();
+
+        try {
+            // MANDAMOS EN LOS PARAMETROS EL IDENTIFICADOR DEL ELEMENTO A ELIMINAR
+            String pathInfo = request.getPathInfo();
+
+            if (pathInfo == null || pathInfo.equals("/")) {
+                throw new IllegalArgumentException("El id es obligatorio.");
+            }
+
+            Long id = Long.parseLong(pathInfo.substring(1));
+
+            usuarioService.eliminarUsuario(id);
+
+            apiResponse.setSuccess(true);
+            apiResponse.setMessage("Usuario eliminado correctamente");
+
+            JSONMapper.mapper.writeValue(response.getWriter(), apiResponse);
+
+        } catch (Exception e) {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+
+            apiResponse.setSuccess(false);
+            apiResponse.setMessage(e.getMessage());
+
+            JSONMapper.mapper.writeValue(response.getWriter(), apiResponse);
+        }
     }
 }

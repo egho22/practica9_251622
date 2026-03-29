@@ -2,53 +2,29 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.nubulamusicwebaplication.models;
+package com.mycompany.nubulamusicwebaplication.dto;
 
-import jakarta.persistence.*;
-import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
  *
  * @author PC
  */
-@Entity
-@Table(name = "usuario")
-public class Usuario implements Serializable {
+public class UsuarioRequestDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
-
-    @Column(name = "correo", nullable = false, unique = true, length = 100)
     private String correo;
-
-    @Column(name = "contrasenia", nullable = false, length = 255)
     private String contrasenia;
-
-    @Column(name = "pseudonimo", nullable = false, unique = true, length = 50)
     private String pseudonimo;
-
-    @Column(name = "estado", nullable = false, length = 20)
     private String estado;
-
-    @Column(name = "cuenta", nullable = false, length = 20)
     private String cuenta;
-
-    @Column(name = "fecha_nacimiento", nullable = false)
     private LocalDate fechaNacimiento;
-
-    @Column(name = "terminos_aceptados", nullable = false)
     private boolean terminosAceptados;
 
-    public Usuario() {
+    public UsuarioRequestDTO() {
     }
 
-    public Usuario(String nombre, String correo, String contrasenia, String pseudonimo,
-            String estado, String cuenta, LocalDate fechaNacimiento, boolean terminosAceptados) {
+    public UsuarioRequestDTO(String nombre, String correo, String contrasenia, String pseudonimo, String estado, String cuenta, LocalDate fechaNacimiento, boolean terminosAceptados) {
         this.nombre = nombre;
         this.correo = correo;
         this.contrasenia = contrasenia;
@@ -57,14 +33,6 @@ public class Usuario implements Serializable {
         this.cuenta = cuenta;
         this.fechaNacimiento = fechaNacimiento;
         this.terminosAceptados = terminosAceptados;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getNombre() {
@@ -130,5 +98,6 @@ public class Usuario implements Serializable {
     public void setTerminosAceptados(boolean terminosAceptados) {
         this.terminosAceptados = terminosAceptados;
     }
+    
     
 }
