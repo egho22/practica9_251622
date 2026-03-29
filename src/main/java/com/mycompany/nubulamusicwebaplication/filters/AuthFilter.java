@@ -31,7 +31,7 @@ public class AuthFilter implements Filter {
         String authHeader = req.getHeader("Authorization");
         //jwt
         boolean tokenValido = false;
-        if (authHeader != null && authHeader.startsWith("Barer")) {
+        if (authHeader != null && authHeader.startsWith("Bearer ")) {
             String token = authHeader.substring(7);
 
             try {
